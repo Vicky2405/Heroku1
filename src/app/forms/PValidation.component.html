@@ -1,0 +1,52 @@
+<form> 
+    <div class="form-group"> 
+    <label for="id1">Name</label> 
+    <input required ngModel id="id1" type="text" class="form.control" name="N1" #N1="ngModel" (change)="changeV(N1)" > 
+    <div class="alert alert-danger" *ngIf="N1.touched && !N1.valid">Name is required</div> 
+    </div><br> 
+    <div class="form-group"> 
+    <label for="id2">Contact no</label> 
+    <input required ngModel id="id2" type="text" class="form.control" name="C1" #C1="ngModel" (change)="changeV(C1)"> 
+    <div class="alert alert-danger" *ngIf="C1.touched && !C1.valid">Contact is required</div> 
+    </div><br> 
+    <div class="form-group"> 
+    <label for="id3">Proof id</label> 
+    <input required ngModel id="id3" type="text" class="form.control" name="P1" #P1="ngModel" (change)="changeV(P1)"> 
+    <div class="alert alert-danger" *ngIf="P1.touched && !P1.valid">Proof id is required</div> 
+    </div><br> 
+    <div class="form-group"> 
+    <label for="id4">Contact</label> 
+    <input required ngModel id="id4" type="text" class="form.control" name="C2" #C2="ngModel" (change)="changeV(C2)" pattern="[0-9]"> 
+    <div class="alert alert-danger" *ngIf="C2.touched && !C2.valid"> 
+    <div *ngIf="C2.errors?.required">Number is required</div> 
+    <div *ngIf="C2.errors?.pattern">Enter only number</div> 
+    </div> 
+    </div><br> 
+    <div class="form-group"> 
+    <label for="id5">User ID</label> 
+    <input required ngModel id="id5" type="text" class="form.control" name="U1" #U1="ngModel" (change)="changeV(U1)" pattern="[a-zA-Z\s]"> 
+    <div class="alert alert-danger" *ngIf="U1.touched && !U1.valid"> 
+    <div *ngIf="U1.errors?.required">ID prood number is required</div> 
+    <div *ngIf="U1.errors?.pattern">Enter only string</div> 
+    </div> 
+    </div><br> 
+    <div class="form-group"> 
+    <label for="id8">Password</label> 
+    <input required ngModel minlength="8" maxlength="15" id="id8" type="text" class="form.control" name="P2" #P2="ngModel" (change)="changeV(P2)" > 
+    <div class="alert alert-danger" *ngIf="P2.touched && !P2.valid"> 
+    <div *ngIf="P2.errors?.required">Password is required</div> 
+    <div *ngIf="P2.errors?.minlength">Minimum length should be 8</div> 
+    <div *ngIf="P2.errors?.maxlength">Maximum length should be 15</div> 
+    </div> 
+    </div><br> 
+    <div class="form-group"> 
+    <label for="id9">Proof Id password</label> 
+    <input required ngModel minlength="8" maxlength="15" id="id9" type="text" class="form.control" name="P3" #P3="ngModel" (change)="changeV(P3)" > 
+    <div class="alert alert-danger" *ngIf="P3.touched && !P3.valid"> 
+    <div *ngIf="P3.errors?.required">Password is required</div> 
+    <div *ngIf="P3.errors?.minlength">Minimum length should be 8</div> 
+    <div *ngIf="P3.errors?.maxlength">Maximum length should be 15</div> 
+    </div> 
+    </div><br> 
+    <button class="btn btn-primary">Submit</button> 
+    </form>
